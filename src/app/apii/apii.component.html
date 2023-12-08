@@ -1,0 +1,22 @@
+<span class="countdown font-mono text-6xl">
+  <span id="counterElement" style="--value: {{this.counter}}"></span>
+</span>
+
+<div class="mockup-code bg-primary text-primary-content">
+  <!-- <pre *ngFor="let i of api"> -->
+  <pre>
+    <code>{{api | json}}
+    </code>
+  </pre>
+</div>
+<script>
+  let counter = 10;
+  setInterval(() => {
+    if (counter > 0) {
+      counter--;
+    }
+    document
+      .getElementById("counterElement")
+      .style.setProperty("--value", counter);
+  }, 1000);
+</script>
