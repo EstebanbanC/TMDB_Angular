@@ -1,7 +1,20 @@
-<span class="countdown font-mono text-6xl">
-  <span id="counterElement" style="--value: {{this.counter}}"></span>
-</span>
 
+<div *ngFor="let i of api">
+    <style>
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+  <img
+    [src]="'https://www.themoviedb.org/t/p/w600_and_h900_bestv2'+i.poster_path"
+  />
+  <p>Titre : {{ i.original_title }}</p>
+  <p>Date de sortie : {{ i.release_date }}</p>
+  <p>Description : {{ i.overview }}</p>
+</div>
+
+<!-- // vue code -->
 <div class="mockup-code bg-primary text-primary-content">
   <!-- <pre *ngFor="let i of api"> -->
   <pre>
@@ -9,14 +22,4 @@
     </code>
   </pre>
 </div>
-<script>
-  let counter = 10;
-  setInterval(() => {
-    if (counter > 0) {
-      counter--;
-    }
-    document
-      .getElementById("counterElement")
-      .style.setProperty("--value", counter);
-  }, 1000);
-</script>
+

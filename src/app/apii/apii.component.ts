@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
@@ -6,28 +7,89 @@ import { DataService } from '../data.service';
   templateUrl: './apii.component.html',
   styleUrls: ['./apii.component.scss']
 })
-export class ApiiComponent implements OnInit {
+
+export class ApiiComponent {
+
   api : any = ''
   sub : any = null
-  counter = 5;
 
-  constructor(private dataService : DataService){}
+  constructor(private dataService : DataService){
+
+  }
 
   ngOnInit() {
-    this.go();
-    this.startCounter();
+    this.goMovieSimilar()
+    
+  }
+// exemple
+  // go(){
+  //   this.sub = this.dataService.getMovie().subscribe((data) => 
+  //   this.api = data)
+    
+  // }
+  goMoviePopular(){
+    this.sub = this.dataService.getMoviePopular().subscribe((data) => 
+    this.api = data)
+    
   }
 
-  go(){
-    this.sub = this.dataService.getTvRecommendations().subscribe((data) => 
-    this.api = data);
+    goMovieNowPlaying(){
+    this.sub = this.dataService.getMovieNowPlaying().subscribe((data) => 
+    this.api = data)
+    
   }
 
-  startCounter() {
-    setInterval(() => {
-      if(this.counter > 0){
-        this.counter--;
-      }
-    }, 1000);
+    goMovieUpComing(){
+    this.sub = this.dataService.getMovieUpComing().subscribe((data) => 
+    this.api = data)
+    
   }
+  
+
+  goMovieDetails(){
+    this.sub = this.dataService.getMovieDetails().subscribe((data) => 
+    this.api = data)
+    
+  }
+
+  goMovieAlternativeTitles(){
+    this.sub = this.dataService.getMovieAlternativeTitles().subscribe((data) => 
+    this.api = data)
+    
+  }
+  
+  goMovieCredit(){
+    this.sub = this.dataService.getMovieCredit().subscribe((data) => 
+    this.api = data)
+    
+  }
+
+  goMovieImages(){
+    this.sub = this.dataService.getMovieImages().subscribe((data) => 
+    this.api = data)
+    
+  }
+
+  goMovieRecommendations(){
+    this.sub = this.dataService.getMovieRecommendations().subscribe((data) => 
+    this.api = data)
+    
+  }
+
+  goMovieReleaseDates(){
+    this.sub = this.dataService.getMovieReleaseDates().subscribe((data) => 
+    this.api = data)
+    
+  }
+  goMovieRewiews(){
+    this.sub = this.dataService.getMovieRewiews().subscribe((data) => 
+    this.api = data)
+    
+  }
+  goMovieSimilar(){
+    this.sub = this.dataService.getMovieSimilar().subscribe((data) => 
+    this.api = data)
+    
+  }
+
 }

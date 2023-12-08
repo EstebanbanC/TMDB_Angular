@@ -15,15 +15,90 @@ export class DataService {
     },
   };
 
-  id_test = '1';
-  
+  id_test = 901362;
+
   constructor(private httpClient: HttpClient) {}
 
-  getMovies(): Observable<any> {
-
+  getMoviePopular(): Observable<any> {
     return this.httpClient
-      .get<any>(this.site, this.httpOptions)
+      .get<any>(
+        this.site + 'movie/popular?language=fr&page=1',
+        this.httpOptions
+      )
       .pipe(map((e: any) => e.results));
+  }
+  getMovieNowPlaying(): Observable<any> {
+    return this.httpClient
+      .get<any>(
+        this.site + 'movie/now_playing?language=en-US&page=1',
+        this.httpOptions
+      )
+      .pipe(map((e: any) => e.results));
+  }
+  getMovieUpComing(): Observable<any> {
+    return this.httpClient
+      .get<any>(
+        this.site + 'movie/upcoming?language=en-US&page=1',
+        this.httpOptions
+      )
+      .pipe(map((e: any) => e.results));
+  }
+
+  getMovieDetails(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.site + 'movie/' + this.id_test + '?language=fr',
+      this.httpOptions
+    );
+  }
+
+  getMovieAlternativeTitles(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.site + 'movie/' + this.id_test + '/alternative_titles',
+      this.httpOptions
+    );
+  }
+
+  getMovieCredit(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.site + 'movie/' + this.id_test + '/credits?language=en-US',
+      this.httpOptions
+    );
+  }
+
+  getMovieImages(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.site + 'movie/' + this.id_test + '/images',
+      this.httpOptions
+    );
+  }
+  getMovieRecommendations(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.site +
+        'movie/' +
+        this.id_test +
+        '/recommendations?language=en-US&page=1',
+      this.httpOptions
+    );
+  }
+
+  getMovieReleaseDates(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.site + 'movie/' + this.id_test + '/release_dates',
+      this.httpOptions
+    );
+  }
+  getMovieRewiews(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.site + 'movie/' + this.id_test + '/reviews?language=en-US&page=1',
+      this.httpOptions
+    );
+  }
+
+  getMovieSimilar(): Observable<any> {
+    return this.httpClient.get<any>(
+      this.site + 'movie/' + this.id_test + '/similar?language=en-US&page=1',
+      this.httpOptions
+    );
   }
 
   getMovieTopRated(): Observable<any> {
