@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -6,6 +7,7 @@ import { DataService } from '../data.service';
   templateUrl: './apii.component.html',
   styleUrls: ['./apii.component.scss']
 })
+
 export class ApiiComponent {
 
   api : any = ''
@@ -89,7 +91,5 @@ export class ApiiComponent {
     this.api = data)
     
   }
-
-
 
 }
