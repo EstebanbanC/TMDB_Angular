@@ -1,0 +1,13 @@
+<div class="hero min-h-screen" [ngClass]="{'dark-mode': darkMode}">
+    <div class="hero-content flex-col lg:flex-row">
+        <img src="../assets/hero.png" class="max-w-sm rounded-lg shadow-2xl max-h-[30rem]" />
+        <div class="m-3">
+            <h2 class="text-3xl font-bold">Last release :</h2>
+            <h1 class="text-5xl font-bold py-6">Movie Title</h1>
+            <p class="py-6">Medium description of the movie, explaining a bit of the story, the characters, and so more
+            </p>
+            <button class="btn btn-primary">See more</button>
+        </div>
+    </div>
+    <div class="hero-blur-overlay" [ngClass]="{'dark-mode': darkMode}"></div>
+</div>

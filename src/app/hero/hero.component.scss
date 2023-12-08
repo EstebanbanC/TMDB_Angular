@@ -1,0 +1,38 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-image: url('../../assets/lighthero.png');
+    background-attachment: fixed; 
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.dark-mode .hero::before {
+    background-image: url('../../assets/darkhero.png');
+}
+
+.hero-blur-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.dark-mode .hero-blur-overlay {
+    background-size: cover;
+    background-image: url('../../assets/darkhero.png');
+    background-attachment: fixed; 
+}
