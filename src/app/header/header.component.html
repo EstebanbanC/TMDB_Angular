@@ -1,4 +1,4 @@
-<div class="navbar bg-base-200">
+<div class="navbar bg-base-300 fixed z-40 shadow-xl">
     <div class="navbar-start">
         <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -12,17 +12,19 @@
                     <a>Movies</a>
                     <ul class="p-2">
                         <li><a>Top 100</a></li>
-                        <li><a>Most recents</a></li>
+                        <li><a>Most Populars</a></li>
+                        <li><a>Upcoming</a></li>
                     </ul>
                 </li>
                 <li>
                     <a>TV Shows</a>
                     <ul class="p-2">
                         <li><a>Top 100</a></li>
-                        <li><a>Most recents</a></li>
+                        <li><a>Most Populars</a></li>
                     </ul>
                 </li>
                 <li><a>Actors</a></li>
+                <li><a>About us</a></li>
             </ul>
         </div>
         <a class="btn btn-ghost text-xl">TMDB Angular</a>
@@ -34,7 +36,8 @@
                     <summary>Movies</summary>
                     <ul class="p-2">
                         <li><a>Top 100</a></li>
-                        <li><a>Most recents</a></li>
+                        <li><a>Most Populars</a></li>
+                        <li><a>Upcoming</a></li>
                     </ul>
                 </details>
             </li>
@@ -43,14 +46,15 @@
                     <summary>TV Shows</summary>
                     <ul class="p-2">
                         <li><a>Top 100</a></li>
-                        <li><a>Most recents</a></li>
+                        <li><a>Most Populars</a></li>
                     </ul>
                 </details>
             </li>
             <li><a>Actors</a></li>
+            <li><a>About us</a></li>
         </ul>
     </div>
     <div class="navbar-end">
-        <a class="btn">Button</a>
+        <input type="checkbox" [(ngModel)]="darkMode" (change)="toggleDarkMode()" value="dark" class="toggle theme-controller bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2"/>
     </div>
 </div>
