@@ -1,11 +1,26 @@
 <div class="bg-base-100 z-0">
-    <h1 class="text-5xl font-bold pt-6 pb-3 mx-10">TV Shows</h1>
+    <h1 class="text-5xl font-bold pt-6 mx-10">TV Shows</h1>
     <div class="w-auto border-2 border-base-200 mx-10"></div>
-    <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-9">
+    <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
         <div *ngFor="let TvShow of TvShowList" class="card w-96 bg-base-200 shadow-lg">
             <figure><img [src]="'https://www.themoviedb.org/t/p/w600_and_h900_bestv2'+TvShow.poster_path" alt="Poster du film" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">{{TvShow.title}}</h2>
+            <div class="card-body flex flex-col">
+                <div class="flex items-center justify-between mb-2">
+                  <h2 class="card-title">{{TvShow.title}}</h2>
+                  <div class="rating rating-sm rating-half">
+                        <input type="radio" name="rating-12" class="rating-hidden cursor-default"/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" checked/>
+                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
+                    </div>
+                </div>
                 <h5 class="opacity-80 text-sm">{{TvShow.first_air_date}}</h5>
                 <p>{{TvShow.overview}}</p>
                 <div class="card-actions justify-center pt-3">
@@ -13,5 +28,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="mx-10 divider pb-3">More shows</div>
+    <div class="join mx-10 pb-6 flex flex-row">
+        <button class="btn btn-outline btn-neutral join-item basis-1/2">Top 100</button>
+        <button class="btn btn-outline btn-neutral join-item basis-1/2">Most Populars</button>
     </div>
 </div>
