@@ -1,0 +1,25 @@
+
+<div *ngFor="let i of api">
+    <style>
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+  <img
+    [src]="'https://www.themoviedb.org/t/p/w600_and_h900_bestv2'+i.poster_path" alt="Poster du film"
+  />
+  <p>Titre : {{ i.original_title }}</p>
+  <p>Date de sortie : {{ i.release_date }}</p>
+  <p>Description : {{ i.overview }}</p>
+</div>
+
+<!-- // vue code -->
+<div class="mockup-code bg-primary text-primary-content">
+  <!-- <pre *ngFor="let i of api"> -->
+  <pre>
+    <code>{{api | json}}
+    </code>
+  </pre>
+</div>
+

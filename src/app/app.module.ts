@@ -9,6 +9,9 @@ import { MoviesComponent } from './movies/movies.component';
 import { ShowsComponent } from './shows/shows.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { ApiiComponent } from './apii/apii.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,17 @@ import { FormsModule } from '@angular/forms';
     HeroComponent,
     MoviesComponent,
     ShowsComponent,
-    FooterComponent
+    FooterComponent,
+    ApiiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
+   
   providers: [],
   bootstrap: [AppComponent]
 })

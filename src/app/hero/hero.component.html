@@ -1,11 +1,18 @@
-<div class="hero min-h-screen" [ngClass]="{'dark-mode': darkMode}">
-    <div class="hero-content flex-col lg:flex-row">
-        <img src="../assets/hero.png" class="max-w-sm rounded-lg shadow-2xl max-h-[30rem]" />
-        <div class="m-3">
-            <h2 class="text-3xl font-bold py-3">Last release :</h2>
-            <div class="flex items-center">
-                <h1 class="text-6xl font-bold py-3">Movie Title</h1>
-                <div class="rating rating-lg rating-half pl-9">
+<div class="hero min-h-screen" [ngClass]="{ 'dark-mode': darkMode }">
+  <div class="hero-content flex-col lg:flex-row">
+    <img
+      [src]="
+        'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +
+        lastRelease.poster_path
+      "
+      class="max-w-sm rounded-lg shadow-2xl max-h-[30rem]"
+      alt="Poster du film"
+    />
+    <div class="m-3">
+      <h2 class="text-3xl font-bold">Last release :</h2>
+      <div class="flex items-center">
+        <h1 class="text-5xl font-bold py-6">{{ lastRelease.title }}</h1>
+        <div class="rating rating-lg rating-half pl-9">
                     <input type="radio" name="rating-0" class="rating-hidden cursor-default"/>
                     <input type="radio" name="rating-0" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
                     <input type="radio" name="rating-0" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
@@ -18,12 +25,11 @@
                     <input type="radio" name="rating-0" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" checked/>
                     <input type="radio" name="rating-0" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
                 </div>
-            </div>
-            <h5 class="opacity-80 text-sm">11-15-2023</h5>
-            <p class="py-3">Medium description of the movie, explaining a bit of the story, the characters, and so more
-            </p>
-            <button class="btn btn-primary">See more</button>
         </div>
+      <h5 class="opacity-80 text-sm">11-15-2023</h5>
+      <p class="py-6">{{ lastRelease.overview }}</p>
+      <button class="btn btn-primary">See more</button>
     </div>
-    <div class="hero-blur-overlay" [ngClass]="{'dark-mode': darkMode}"></div>
+  </div>
+  <div class="hero-blur-overlay" [ngClass]="{ 'dark-mode': darkMode }"></div>
 </div>

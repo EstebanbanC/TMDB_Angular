@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DarkModeService } from '../dark-mode.service';
 import { OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-hero',
@@ -11,7 +12,10 @@ export class HeroComponent implements OnInit {
   darkMode!: boolean;
   backgroundImageUrl!: string;
 
-  constructor(private darkModeService: DarkModeService) {}
+  sub : any = null;
+  lastRelease : any = '';
+
+  constructor(private darkModeService: DarkModeService, private dataService : DataService) {}
 
   ngOnInit() {
     this.darkModeService.darkMode$.subscribe((mode) => {
@@ -21,5 +25,11 @@ export class HeroComponent implements OnInit {
     this.darkModeService.backgroundImage$.subscribe((imageUrl) => {
       this.backgroundImageUrl = imageUrl;
     });
+    this.getLastRelease()
+  }
+
+  getLastRelease(){
+    this.sub = this.dataService.getMovieNowPlaying().subscribe((data) => 
+    this.lastRelease = data[0]);
   }
 }
