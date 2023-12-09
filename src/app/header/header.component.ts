@@ -14,4 +14,5 @@ export class HeaderComponent {
   toggleDarkMode() {
     this.darkModeService.toggleDarkMode();
   }
+  
 }
