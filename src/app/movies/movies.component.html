@@ -2,89 +2,12 @@
     <h1 class="text-5xl font-bold pt-6 pb-3 mx-10">Movies</h1>
     <div class="w-auto border-2 border-base-300 mx-10"></div>
     <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-9">
-        <div class="card w-96 bg-base-300 shadow-lg">
-            <figure><img src="../assets/poster1.png" /></figure>
+        <div *ngFor="let movie of movieList" class="card w-96 bg-base-300 shadow-lg">
+            <figure><img [src]="'https://www.themoviedb.org/t/p/w600_and_h900_bestv2'+movie.poster_path" alt="Poster du film" /></figure>
             <div class="card-body">
-                <h2 class="card-title">Movie</h2>
-                <h5 class="opacity-80 text-sm">11-15-2023</h5>
-                <p>Short descrption of the movie</p>
-                <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-96 bg-base-300 shadow-lg">
-            <figure><img src="../assets/poster2.png" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">Movie</h2>
-                <h5 class="opacity-80 text-sm">11-15-2023</h5>
-                <p>Short descrption of the movie</p>
-                <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-96 bg-base-300 shadow-lg">
-            <figure><img src="../assets/poster3.png" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">Movie</h2>
-                <h5 class="opacity-80 text-sm">11-15-2023</h5>
-                <p>Short descrption of the movie</p>
-                <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-96 bg-base-300 shadow-lg">
-            <figure><img src="../assets/poster4.png" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">Movie</h2>
-                <h5 class="opacity-80 text-sm">11-15-2023</h5>
-                <p>Short descrption of the movie</p>
-                <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-96 bg-base-300 shadow-lg">
-            <figure><img src="../assets/poster5.png" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">Movie</h2>
-                <h5 class="opacity-80 text-sm">11-15-2023</h5>
-                <p>Short descrption of the movie</p>
-                <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-96 bg-base-300 shadow-lg">
-            <figure><img src="../assets/poster6.png" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">Movie</h2>
-                <h5 class="opacity-80 text-sm">11-15-2023</h5>
-                <p>Short descrption of the movie</p>
-                <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-96 bg-base-300 shadow-lg">
-            <figure><img src="../assets/poster7.png" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">Movie</h2>
-                <h5 class="opacity-80 text-sm">11-15-2023</h5>
-                <p>Short descrption of the movie</p>
-                <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
-                </div>
-            </div>
-        </div>
-        <div class="card w-96 bg-base-300 shadow-lg">
-            <figure><img src="../assets/poster8.png" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">Movie</h2>
-                <h5 class="opacity-80 text-sm">11-15-2023</h5>
-                <p>Short descrption of the movie</p>
+                <h2 class="card-title">{{movie.title}}</h2>
+                <h5 class="opacity-80 text-sm">{{movie.release_date}}</h5>
+                <p>{{movie.overview}}</p>
                 <div class="card-actions justify-center pt-3">
                     <button class="btn btn-primary w-full text-lg">See More</button>
                 </div>
