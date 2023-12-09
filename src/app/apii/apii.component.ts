@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./apii.component.scss']
 })
 
-export class ApiiComponent {
+export class ApiiComponent implements OnInit {
 
   api : any = ''
   sub : any = null

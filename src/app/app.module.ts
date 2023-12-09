@@ -20,21 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
     HeroComponent,
     MoviesComponent,
     ShowsComponent,
-    FooterComponent
+    FooterComponent,
+    ApiiComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-    ApiiComponent
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
    
-imports: [
-  BrowserModule,
-  AppRoutingModule,
-  ReactiveFormsModule,
-  HttpClientModule
-],
   providers: [],
   bootstrap: [AppComponent]
 })
