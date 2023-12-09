@@ -30,7 +30,7 @@ export class DataService {
   getMovieNowPlaying(): Observable<any> {
     return this.httpClient
       .get<any>(
-        this.site + 'movie/now_playing?language=en-US&page=1',
+        this.site + 'movie/now_playing?language=fr&page=1',
         this.httpOptions
       )
       .pipe(map((e: any) => e.results));
@@ -38,7 +38,7 @@ export class DataService {
   getMovieUpComing(): Observable<any> {
     return this.httpClient
       .get<any>(
-        this.site + 'movie/upcoming?language=en-US&page=1',
+        this.site + 'movie/upcoming?language=fr&page=1',
         this.httpOptions
       )
       .pipe(map((e: any) => e.results));
@@ -60,7 +60,7 @@ export class DataService {
 
   getMovieCredit(): Observable<any> {
     return this.httpClient.get<any>(
-      this.site + 'movie/' + this.id_test + '/credits?language=en-US',
+      this.site + 'movie/' + this.id_test + '/credits?language=fr',
       this.httpOptions
     );
   }
@@ -76,7 +76,7 @@ export class DataService {
       this.site +
         'movie/' +
         this.id_test +
-        '/recommendations?language=en-US&page=1',
+        '/recommendations?language=fr&page=1',
       this.httpOptions
     );
   }
@@ -89,14 +89,14 @@ export class DataService {
   }
   getMovieRewiews(): Observable<any> {
     return this.httpClient.get<any>(
-      this.site + 'movie/' + this.id_test + '/reviews?language=en-US&page=1',
+      this.site + 'movie/' + this.id_test + '/reviews?language=fr&page=1',
       this.httpOptions
     );
   }
 
   getMovieSimilar(): Observable<any> {
     return this.httpClient.get<any>(
-      this.site + 'movie/' + this.id_test + '/similar?language=en-US&page=1',
+      this.site + 'movie/' + this.id_test + '/similar?language=fr&page=1',
       this.httpOptions
     );
   }
