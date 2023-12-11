@@ -3,22 +3,33 @@
     <div class="w-auto border-2 border-base-200 mx-10"></div>
     <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
         <div *ngFor="let TvShow of TvShowList" class="card w-96 bg-base-200 shadow-lg">
-            <figure><img [src]="'https://www.themoviedb.org/t/p/w600_and_h900_bestv2'+TvShow.poster_path" alt="Poster du film" /></figure>
+            <figure><img [src]="'https://www.themoviedb.org/t/p/w1920_and_h800_bestv2'+TvShow.backdrop_path"
+                    alt="Poster du film" /></figure>
             <div class="card-body flex flex-col">
                 <div class="flex items-center justify-between mb-2">
-                  <h2 class="card-title">{{TvShow.title}}</h2>
-                  <div class="rating rating-sm rating-half">
-                        <input type="radio" name="rating-12" class="rating-hidden cursor-default"/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-1 cursor-default" checked/>
-                        <input type="radio" name="rating-12" class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled/>
+                    <h2 class="card-title">{{TvShow.name}}</h2>
+                    <div class="rating rating-sm rating-half">
+                        <input type="radio" name="rating-12" class="rating-hidden cursor-default" />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" checked />
+                        <input type="radio" name="rating-12"
+                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
                     </div>
                 </div>
                 <h5 class="opacity-80 text-sm">{{TvShow.first_air_date}}</h5>
