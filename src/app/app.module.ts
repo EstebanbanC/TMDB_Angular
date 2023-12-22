@@ -17,6 +17,13 @@ import { HomeComponent } from './home/home.component';
 import { SoloMovieComponent } from './solo-movie/solo-movie.component';
 import { MovieDisplayComponent } from './movie-display/movie-display.component';
 import { ActorsDisplayComponent } from './actors-display/actors-display.component';
+import { StarComponent } from './star/star.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { TVDetailsComponent } from './tv-details/tv-details.component';
+import { MovieTop100Component } from './movie-top-100/movie-top-100.component';
+import { MovieMostPopularComponent } from './movie-most-popular/movie-most-popular.component';
+import { TVTop100Component } from './tv-top-100/tv-top-100.component';
+import { TVPopularComponent } from './tv-popular/tv-popular.component';
 
 @NgModule({
   declarations: [
