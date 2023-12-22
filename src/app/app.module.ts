@@ -12,6 +12,11 @@ import { FormsModule } from '@angular/forms';
 import { ApiiComponent } from './apii/apii.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { SoloMovieComponent } from './solo-movie/solo-movie.component';
+import { MovieDisplayComponent } from './movie-display/movie-display.component';
+import { ActorsDisplayComponent } from './actors-display/actors-display.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { HttpClientModule } from '@angular/common/http';
     MoviesComponent,
     ShowsComponent,
     FooterComponent,
-    ApiiComponent
+    ApiiComponent,
+    AboutComponent,
+    HomeComponent,
+    SoloMovieComponent,
+    MovieDisplayComponent,
+    ActorsDisplayComponent
   ],
   imports: [
     BrowserModule,
