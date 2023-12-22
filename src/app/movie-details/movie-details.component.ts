@@ -14,7 +14,7 @@ export class MovieDetailsComponent {
 
   }
   ngOnInit() {
-    this.sub = this.dataService.getMovieDetails().subscribe((data) => 
+    this.sub = this.dataService.getMovieDetails(22).subscribe((data) => 
     this.movie = data)
     
   }

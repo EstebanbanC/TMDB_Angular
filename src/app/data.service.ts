@@ -45,9 +45,9 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
-  getMovieDetails(): Observable<any> {
+  getMovieDetails(id:number): Observable<any> {
     return this.httpClient.get<any>(
-      this.site + 'movie/' + this.id_test + '?language=fr',
+      this.site + 'movie/' + id + '?language=fr',
       this.httpOptions
     );
   }

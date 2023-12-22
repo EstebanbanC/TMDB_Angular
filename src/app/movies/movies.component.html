@@ -1,4 +1,4 @@
-<div class="bg-base-200 z-20">
+<div class="bg-base-200 z-20" *ngIf="movieList">
     <h1 class="text-5xl font-bold pt-6 mx-10">Movies</h1>
     <div class="w-auto border-2 border-base-300 mx-10"></div>
     <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
@@ -17,7 +17,7 @@
                 <h5 class="opacity-80 text-sm">{{ movie.release_date }}</h5>
                 <p>{{ truncateDescription(movie.overview) }}</p>
                 <div class="card-actions justify-center pt-3">
-                    <a class="btn btn-primary w-full text-lg" routerLink="/apii-component">See More</a>
+                    <a class="btn btn-primary w-full text-lg" [routerLink]="'/movie/' + movie.id">See More</a>
                 </div>
             </div>
         </div>

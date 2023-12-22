@@ -1,24 +1,28 @@
-
-<div class="hero min-h-screen" [ngClass]="{ 'dark-mode': darkMode }" >
+<div class="hero min-h-screen" [ngClass]="{ 'dark-mode': darkMode }">
   <div class="hero-content flex-col lg:flex-row" *ngIf="lastRelease">
     <img
       [src]="
         'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +
         lastRelease.poster_path
-      " class="max-w-sm rounded-lg shadow-2xl max-h-[30rem]" alt="Poster du film" />
-        <div class="m-3">
-            <h2 class="text-3xl font-bold">Last release :</h2>
-            <div class="flex items-center">
-                <h1 class="text-5xl font-bold py-6">{{ lastRelease.title }}</h1>
-                <app-star
-                [note]="lastRelease.vote_average"
-                size="rating-lg pl-9"
-              ></app-star>
-            </div>
-            <h5 class="opacity-80 text-sm">{{lastRelease.release_date}}</h5>
-            <p class="py-6">{{ lastRelease.overview }}</p>
-            <button class="btn btn-primary">See more</button>
-        </div>
+      "
+      class="max-w-sm rounded-lg shadow-2xl max-h-[30rem]"
+      alt="Poster du film"
+    />
+    <div class="m-3">
+      <h2 class="text-3xl font-bold">Last release :</h2>
+      <div class="flex items-center">
+        <h1 class="text-5xl font-bold py-6">{{ lastRelease.title }}</h1>
+        <app-star
+          [note]="lastRelease.vote_average"
+          size="rating-lg pl-9"
+        ></app-star>
+      </div>
+      <h5 class="opacity-80 text-sm">{{ lastRelease.release_date }}</h5>
+      <p class="py-6">{{ lastRelease.overview }}</p>
+      <button [routerLink]="'/movie/' + lastRelease.id" class="btn btn-primary">
+        See more
+      </button>
     </div>
-    <div class="hero-blur-overlay" [ngClass]="{ 'dark-mode': darkMode }"></div>
+  </div>
+  <div class="hero-blur-overlay" [ngClass]="{ 'dark-mode': darkMode }"></div>
 </div>
