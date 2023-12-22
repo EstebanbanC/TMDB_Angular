@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
+import { Movie } from './movie';
+import { TvShow } from './tv-show';
 
 @Injectable({
   providedIn: 'root'
@@ -16,64 +18,79 @@ export class DataService {
   };
 
   id_test = 22;
-
+//  movies: Movie[] = [];
   constructor(private httpClient: HttpClient) {}
 
-  getMoviePopular(): Observable<any> {
+  getMoviesPopular(): Observable<Movie[]> {
     return this.httpClient
-      .get<any>(
+      .get<Movie[]>(
         this.site + 'movie/popular?language=fr&page=1',
         this.httpOptions
       )
-      .pipe(map((e: any) => e.results));
+      // function getMovie(e: any): Movie {}
+      .pipe(
+        map(
+          (e:any) => e.results
+          // (e: any) =>
+          //   e.results.map( (el: any): Movie => ({
+          //     backdrop_path: el.backdrop_path,
+          //     popularity: el.popularity,
+          //     title: el.title,
+          //     release_date: el.release_date,
+          //     vote_average: el.vote_average,
+          //     vote_count: el.vote_count
+          //   }))
+          // ici nous pouvons faire un map pour chaque propriété de l'objet Movie Mais on est pas obligé de le faire car les propriétés sont les mêmes 'ca match parfaitement'
+        )
+      )
   }
 
-  getMovieNowPlaying(): Observable<any> {
+  getMovieNowPlaying(): Observable<Movie[]> {
     return this.httpClient
-      .get<any>(
+      .get<Movie[]>(
         this.site + 'movie/now_playing?language=fr&page=1',
         this.httpOptions
       )
       .pipe(map((e: any) => e.results));
   }
-  getMovieUpComing(): Observable<any> {
+  getMovieUpComing(): Observable<Movie[]> {
     return this.httpClient
-      .get<any>(
+      .get<Movie[]>(
         this.site + 'movie/upcoming?language=fr&page=1',
         this.httpOptions
       )
       .pipe(map((e: any) => e.results));
   }
 
-  getMovieDetails(id:number): Observable<any> {
-    return this.httpClient.get<any>(
-      this.site + 'movie/' + id + '?language=fr',
+  getMovieDetails(id:number): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
+      this.site + 'movie/' + id:number + '?language=fr',
       this.httpOptions
     );
   }
 
-  getMovieAlternativeTitles(): Observable<any> {
-    return this.httpClient.get<any>(
+  getMovieAlternativeTitles(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + this.id_test + '/alternative_titles',
       this.httpOptions
     );
   }
 
-  getMovieCredit(): Observable<any> {
-    return this.httpClient.get<any>(
+  getMovieCredit(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + this.id_test + '/credits?language=fr',
       this.httpOptions
     );
   }
 
-  getMovieImages(): Observable<any> {
-    return this.httpClient.get<any>(
+  getMovieImages(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + this.id_test + '/images',
       this.httpOptions
     );
   }
-  getMovieRecommendations(): Observable<any> {
-    return this.httpClient.get<any>(
+  getMovieRecommendations(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
       this.site +
         'movie/' +
         this.id_test +
@@ -82,81 +99,82 @@ export class DataService {
     );
   }
 
-  getMovieReleaseDates(): Observable<any> {
-    return this.httpClient.get<any>(
+  getMovieReleaseDates(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + this.id_test + '/release_dates',
       this.httpOptions
     );
   }
-  getMovieRewiews(): Observable<any> {
-    return this.httpClient.get<any>(
+  getMovieRewiews(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + this.id_test + '/reviews?language=fr&page=1',
       this.httpOptions
     );
   }
 
-  getMovieSimilar(): Observable<any> {
-    return this.httpClient.get<any>(
+  getMovieSimilar(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + this.id_test + '/similar?language=fr&page=1',
       this.httpOptions
     );
   }
 
-  getMovieTopRated(): Observable<any> {
+  getMovieTopRated(): Observable<Movie[]> {
     return this.httpClient
-      .get<any>(this.site + 'movie/top_rated?language=fr&page=1', this.httpOptions)
+      .get<Movie[]>(this.site + 'movie/top_rated?language=fr&page=1', 
+      this.httpOptions)
       .pipe(map((e: any) => e.results));
   }
 
 
-  getTvReleasedToday(): Observable<any> {
+  getTvReleasedToday(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'tv/airing_today?language=fr&page=1', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/airing_today?language=fr&page=1', this.httpOptions)
       .pipe(map((e: any) => e.results));
   }
 
-  getTvReleasedPastWeek(): Observable<any> {
+  getTvReleasedPastWeek(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'tv/on_the_air?language=fr&page=1', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/on_the_air?language=fr&page=1', this.httpOptions)
       .pipe(map((e: any) => e.results));
   }
 
 
-  getTvPopular(): Observable<any> {
+  getTvPopular(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'discover/tv?include_adult=false&language=fr&page=1&sort_by=popularity.desc', this.httpOptions)
+      .get<TvShow[]>(this.site + 'discover/tv?include_adult=false&language=fr&page=1&sort_by=popularity.desc', this.httpOptions)
       .pipe(map((e: any) => e.results));
   }
 
-  getTvTopRated(): Observable<any> {
+  getTvTopRated(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'discover/tv?include_adult=false&language=fr&page=1&sort_by=vote_average.desc&vote_count.gte=200', this.httpOptions)
+      .get<TvShow[]>(this.site + 'discover/tv?include_adult=false&language=fr&page=1&sort_by=vote_average.desc&vote_count.gte=200', this.httpOptions)
       .pipe(map((e: any) => e.results));
   }
 
-  getTvDetails(): Observable<any> {
+  getTvDetails(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'tv/' + this.id_test +'?language=fr', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'?language=fr', this.httpOptions)
   }
 
-  getTvAlternativeTitles(): Observable<any> {
+  getTvAlternativeTitles(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'tv/' + this.id_test +'/alternative_titles', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/alternative_titles', this.httpOptions)
   }
 
-  getTvCredits(): Observable<any> {
+  getTvCredits(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'tv/' + this.id_test +'/credits?language=fr', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/credits?language=fr', this.httpOptions)
   }
 
-  getTvImages(): Observable<any> {
+  getTvImages(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'tv/' + this.id_test +'/images', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/images', this.httpOptions)
   }
 
-  getTvRecommendations(): Observable<any> {
+  getTvRecommendations(): Observable<TvShow[]> {
     return this.httpClient
-      .get<any>(this.site + 'tv/' + this.id_test +'/recommendations?language=fr&page=1', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/recommendations?language=fr&page=1', this.httpOptions)
   }
 
 }

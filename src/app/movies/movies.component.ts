@@ -14,7 +14,12 @@ export class MoviesComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.sub = this.dataService.getMoviePopular().subscribe((data) => 
+    this.getMoviePopular()
+    
+  }
+
+  getMoviePopular(){
+    this.sub = this.dataService.getMoviesPopular().subscribe((data) => 
     this.movieList = data)
     
 
