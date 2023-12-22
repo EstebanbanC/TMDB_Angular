@@ -15,7 +15,7 @@ export class DataService {
     },
   };
 
-  id_test = 901362;
+  id_test = 22;
 
   constructor(private httpClient: HttpClient) {}
 
@@ -27,6 +27,7 @@ export class DataService {
       )
       .pipe(map((e: any) => e.results));
   }
+
   getMovieNowPlaying(): Observable<any> {
     return this.httpClient
       .get<any>(
