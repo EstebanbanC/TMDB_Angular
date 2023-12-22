@@ -8,32 +8,11 @@
             <div class="card-body flex flex-col">
                 <div class="flex items-center justify-between mb-2">
                     <h2 class="card-title">{{TvShow.name}}</h2>
-                    <div class="rating rating-sm rating-half">
-                        <input type="radio" name="rating-12" class="rating-hidden cursor-default" />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" checked />
-                        <input type="radio" name="rating-12"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                    </div>
+                    <app-star [note]="TvShow.vote_average" size="rating-sm"></app-star>
+                
                 </div>
                 <h5 class="opacity-80 text-sm">{{TvShow.first_air_date}}</h5>
-                <p>{{TvShow.overview}}</p>
+                <p>{{truncateDescription(TvShow.overview)}}</p>
                 <div class="card-actions justify-center pt-3">
                     <button class="btn btn-primary w-full text-lg">See More</button>
                 </div>

@@ -22,4 +22,7 @@ export class ShowsComponent implements OnInit{
     this.TvShowList = data)
     
   }
+  truncateDescription(description: string): string {
+    return description.length > 50 ? description.substring(0, 150) + '...' : description;
+  }
 }

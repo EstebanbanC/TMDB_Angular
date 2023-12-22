@@ -1,49 +1,45 @@
 <div class="bg-base-200 z-20">
-    <h1 class="text-5xl font-bold pt-6 mx-10">Movies</h1>
-    <div class="w-auto border-2 border-base-300 mx-10"></div>
-    <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
-        <div *ngFor="let movie of movieList" class="card w-96 bg-base-300 shadow-lg">
-            <figure><img [src]="'https://www.themoviedb.org/t/p/w1920_and_h800_bestv2'+movie.backdrop_path"
-                    alt="Poster du film" /></figure>
-            <div class="card-body flex flex-col">
-                <div class="flex items-center justify-between mb-2">
-                    <h2 class="card-title">{{movie.title}}</h2>
-                    <div class="rating rating-sm rating-half">
-                        <input type="radio" name="rating-4  " class="rating-hidden cursor-default" />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" checked />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-1 cursor-default" disabled />
-                        <input type="radio" name="rating-4"
-                            class="bg-accent mask mask-star-2 mask-half-2 cursor-default" disabled />
-                    </div>
-                </div>
-                <h5 class="opacity-80 text-sm">{{movie.release_date}}</h5>
-                <p>{{movie.overview}}</p>
-                <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
-                </div>
-            </div>
+  <h1 class="text-5xl font-bold pt-6 mx-10">Movies</h1>
+  <div class="w-auto border-2 border-base-300 mx-10"></div>
+  <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
+    <div
+      *ngFor="let movie of movieList"
+      class="card w-96 bg-base-300 shadow-lg"
+    >
+      <figure>
+        <img
+          [src]="
+            'https://www.themoviedb.org/t/p/w1920_and_h800_bestv2' +
+            movie.backdrop_path
+          "
+          alt="Poster du film"
+        />
+      </figure>
+      <div class="card-body flex flex-col">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="card-title">{{ movie.title }}</h2>
+          <app-star [note]="movie.vote_average" size="rating-sm"></app-star>
         </div>
+        <h5 class="opacity-80 text-sm">{{ movie.release_date }}</h5>
+        <p>{{ truncateDescription(movie.overview) }}</p>
+        <div class="card-actions justify-center pt-3">
+          <a class="btn btn-primary w-full text-lg" routerLink="/apii-component"
+            >See More</a
+          >
+        </div>
+      </div>
     </div>
-    <div class="mx-10 divider pb-3">More movies</div>
-    <div class="join mx-10 pb-6 flex flex-row">
-        <button class="btn btn-outline btn-neutral join-item basis-1/3">Top 100</button>
-        <button class="btn btn-outline btn-neutral join-item basis-1/3">Most Populars</button>
-        <button class="btn btn-outline btn-neutral join-item basis-1/3">Upcoming</button>
-    </div>
+  </div>
+  <div class="mx-10 divider pb-3">More movies</div>
+  <div class="join mx-10 pb-6 flex flex-row">
+    <button class="btn btn-outline btn-neutral join-item basis-1/3">
+      Top 100
+    </button>
+    <button class="btn btn-outline btn-neutral join-item basis-1/3">
+      Most Populars
+    </button>
+    <button class="btn btn-outline btn-neutral join-item basis-1/3">
+      Upcoming
+    </button>
+  </div>
 </div>
