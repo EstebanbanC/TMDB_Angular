@@ -1,5 +1,6 @@
-<div class="hero min-h-screen" [ngClass]="{ 'dark-mode': darkMode }">
-  <div class="hero-content flex-col lg:flex-row">
+
+<div class="hero min-h-screen" [ngClass]="{ 'dark-mode': darkMode }" >
+  <div class="hero-content flex-col lg:flex-row" *ngIf="lastRelease">
     <img
       [src]="
         'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +

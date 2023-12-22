@@ -1,11 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-star',
   templateUrl: './star.component.html',
-  styleUrls: ['./star.component.scss'],
 })
-export class StarComponent implements OnInit {
+export class StarComponent implements OnInit, OnChanges {
   @Input() size !: string;
   @Input() note !: number;
   rating: number = 0
@@ -17,6 +16,9 @@ export class StarComponent implements OnInit {
     this.name = Math.random().toString(36).substring(7);
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log('je passe')
+  }
   round(value: number, step: number): number {
     step || (step = 1.0);
     var inv = 1.0 / step;
