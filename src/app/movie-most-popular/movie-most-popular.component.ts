@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { Movie } from '../movie';
 
 @Component({
   selector: 'app-movie-most-popular',
@@ -8,16 +9,18 @@ import { DataService } from '../data.service';
 })
 export class MovieMostPopularComponent {
 
-  MoviePopular : any = ''
+  MoviePopular!: Movie[]
   sub : any = null
-JSON: any;
+  JSON: any;
 
   constructor(private dataService : DataService){
 
   }
+
   ngOnInit() {
-    this.sub = this.dataService.getMoviePopular().subscribe((data) => 
-    this.MoviePopular = data)
+    this.sub = this.dataService.getMoviesPopular().subscribe(
+      (data: Movie[]) => this.MoviePopular = data
+    )
     
   }
 }
