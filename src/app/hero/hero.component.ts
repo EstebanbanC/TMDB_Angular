@@ -13,7 +13,7 @@ export class HeroComponent implements OnInit {
   backgroundImageUrl!: string;
 
   sub : any = null;
-  lastRelease : any = '';
+  lastRelease : any = null;
 
   constructor(private darkModeService: DarkModeService, private dataService : DataService) {}
 
@@ -29,7 +29,9 @@ export class HeroComponent implements OnInit {
   }
 
   getLastRelease(){
+
     this.sub = this.dataService.getMovieNowPlaying().subscribe((data) => 
-    this.lastRelease = data[0]);
+      this.lastRelease = data[0]);
+  
   }
 }

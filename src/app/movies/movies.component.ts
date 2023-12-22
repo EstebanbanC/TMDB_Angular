@@ -22,5 +22,10 @@ export class MoviesComponent implements OnInit {
     this.sub = this.dataService.getMoviesPopular().subscribe((data) => 
     this.movieList = data)
     
+
+  }
+
+  truncateDescription(description: string): string {
+    return description.length > 50 ? description.substring(0, 150) + '...' : description;
   }
 }
