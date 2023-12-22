@@ -64,7 +64,7 @@ export class DataService {
 
   getMovieDetails(id:number): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
-      this.site + 'movie/' + id:number + '?language=fr',
+      this.site + 'movie/' + id + '?language=fr',
       this.httpOptions
     );
   }
