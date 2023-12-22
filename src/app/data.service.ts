@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Movie } from './movie';
 import { TvShow } from './tv-show';
+import { Actor } from './actor';
+
 
 @Injectable({
   providedIn: 'root'
@@ -175,6 +177,12 @@ export class DataService {
   getTvRecommendations(): Observable<TvShow[]> {
     return this.httpClient
       .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/recommendations?language=fr&page=1', this.httpOptions)
+  }
+
+  getActors(): Observable<Actor[]> {
+    return this.httpClient
+      .get<TvShow[]>(this.site + '/person/popular?language=fr&page=1', this.httpOptions)
+      .pipe(map((e: any) => e.results));
   }
 
 }

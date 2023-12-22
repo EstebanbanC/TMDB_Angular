@@ -1,0 +1,23 @@
+<div class="min-h-screen bg-base-200 z-20 p-11" *ngIf="actors">
+    <div class="flex flex-wrap justify-center">
+        <h1 class="text-5xl font-bold pt-6 mx-10">Acteurs</h1>
+        <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
+            <div *ngFor="let actor of actors" class="card w-96 bg-base-300 shadow-lg">
+                <figure>
+                    <img [src]="
+                'https://www.themoviedb.org/t/p/w470_and_h470_face/' +
+                actor.profile_path
+              " alt="Shoes" class="w-full h-64 object-cover" />
+                </figure>
+                <div class="card-body flex flex-col">
+                    <h5 class="opacity-80 text-sm">{{actor.name}}</h5>
+                    <p> {{ actor.known_for[0].title || actor.known_for[0].name }},
+                        {{ actor.known_for[1].title || actor.known_for[1].name }}</p>
+                    <div class="card-actions justify-center pt-3">
+                        <a class="btn btn-primary w-full text-lg">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
