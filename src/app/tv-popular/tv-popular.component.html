@@ -1,0 +1,13 @@
+<p>tv-popular works!</p>
+<div *ngFor="let tv of TVpopular">
+
+    <p>{{tv.backdrop_path}}</p>
+    <p>{{tv.popularity}}</p>
+    <p>{{tv.title}}</p>
+    <p>{{tv.release_date}}</p>
+   <!-- Affiche la note moyenne du film -->
+   <p>{{tv.vote_average}}</p>
+    
+   <!-- Affiche le nombre de votes pour le film -->
+   <p>{{tv.vote_count}}</p>
+  </div>

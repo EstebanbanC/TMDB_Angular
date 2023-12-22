@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { ApiiComponent } from './apii/apii.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { StarComponent } from './star/star.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,13 @@ import { StarComponent } from './star/star.component';
     ShowsComponent,
     FooterComponent,
     ApiiComponent,
-    StarComponent
+    StarComponent,
+    MovieDetailsComponent,
+    TVDetailsComponent,
+    MovieTop100Component,
+    MovieMostPopularComponent,
+    TVTop100Component,
+    TVPopularComponent
   ],
   imports: [
     BrowserModule,
