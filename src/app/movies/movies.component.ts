@@ -14,13 +14,13 @@ export class MoviesComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.getMoviePopular()
-    
-  }
-
-  getMoviePopular(){
     this.sub = this.dataService.getMoviePopular().subscribe((data) => 
     this.movieList = data)
     
+
+  }
+
+  truncateDescription(description: string): string {
+    return description.length > 50 ? description.substring(0, 150) + '...' : description;
   }
 }
