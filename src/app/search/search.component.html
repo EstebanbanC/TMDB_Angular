@@ -1,0 +1,4 @@
+<pre *ngIf="response" class="pt-12">{{response | json}}</pre>
+<div *ngIf="!response" class="min-h-screen flex justify-center align-item">
+    <span class="loading loading-spinner loading-lg"></span>
+</div>

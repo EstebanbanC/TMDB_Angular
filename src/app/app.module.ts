@@ -26,6 +26,7 @@ import { TVTop100Component } from './tv-top-100/tv-top-100.component';
 import { TVPopularComponent } from './tv-popular/tv-popular.component';
 import { ActorsComponent } from './actors/actors.component';
 import { ShowDisplayComponent } from './show-display/show-display.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ShowDisplayComponent } from './show-display/show-display.component';
     MovieDisplayComponent,
     ActorsDisplayComponent,
     ActorsComponent,
-    ShowDisplayComponent
+    ShowDisplayComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
