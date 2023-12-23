@@ -6,6 +6,7 @@ import { SoloMovieComponent } from './solo-movie/solo-movie.component';
 import { MovieDisplayComponent } from './movie-display/movie-display.component';
 import { ActorsComponent } from './actors/actors.component';
 import { ActorsDisplayComponent } from './actors-display/actors-display.component';
+import { ShowDisplayComponent } from './show-display/show-display.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'solomovie', component: SoloMovieComponent },
   { path: 'movie/:id', component: MovieDisplayComponent },
   { path: 'actors' , component: ActorsComponent},
-  { path: 'actor/:id', component: ActorsDisplayComponent }
+  { path: 'actor/:id', component: ActorsDisplayComponent },
+  { path: 'show/:id', component: ShowDisplayComponent }
 ];
 
 @NgModule({

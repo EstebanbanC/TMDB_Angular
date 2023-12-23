@@ -17,7 +17,7 @@
                 <h5 class="opacity-80 text-sm">{{TvShow.first_air_date}}</h5>
                 <p>{{truncateDescription(TvShow.overview)}}</p>
                 <div class="card-actions justify-center pt-3">
-                    <button class="btn btn-primary w-full text-lg">See More</button>
+                    <button [routerLink]="'/show/'+ TvShow.id" class="btn btn-primary w-full text-lg">See More</button>
                 </div>
             </div>
         </div>

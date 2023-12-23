@@ -154,9 +154,9 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
-  getTvDetails(): Observable<TvShow[]> {
+  getTvDetails(id :number): Observable<[]> {
     return this.httpClient
-      .get<TvShow[]>(this.site + 'tv/' + this.id_test + '?language=fr', this.httpOptions)
+      .get<[]>(this.site + 'tv/' + id + '?language=fr', this.httpOptions)
   }
 
   getTvAlternativeTitles(): Observable<TvShow[]> {
@@ -164,9 +164,10 @@ export class DataService {
       .get<TvShow[]>(this.site + 'tv/' + this.id_test + '/alternative_titles', this.httpOptions)
   }
 
-  getTvCredits(): Observable<TvShow[]> {
+  getTvCredits(id : number): Observable<[]> {
     return this.httpClient
-      .get<TvShow[]>(this.site + 'tv/' + this.id_test + '/credits?language=fr', this.httpOptions)
+      .get<[]>(this.site + 'tv/' + id + '/credits?language=fr', this.httpOptions)
+      .pipe(map((e: any) => e.cast));
   }
 
   getTvImages(): Observable<TvShow[]> {

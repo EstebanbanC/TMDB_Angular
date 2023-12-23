@@ -25,6 +25,7 @@ import { MovieMostPopularComponent } from './movie-most-popular/movie-most-popul
 import { TVTop100Component } from './tv-top-100/tv-top-100.component';
 import { TVPopularComponent } from './tv-popular/tv-popular.component';
 import { ActorsComponent } from './actors/actors.component';
+import { ShowDisplayComponent } from './show-display/show-display.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ActorsComponent } from './actors/actors.component';
     SoloMovieComponent,
     MovieDisplayComponent,
     ActorsDisplayComponent,
-    ActorsComponent
+    ActorsComponent,
+    ShowDisplayComponent
   ],
   imports: [
     BrowserModule,

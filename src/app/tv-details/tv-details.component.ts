@@ -15,7 +15,7 @@ export class TVDetailsComponent {
 
   }
   ngOnInit() {
-    this.sub = this.dataService.getTvDetails().subscribe((data) => 
+    this.sub = this.dataService.getTvDetails(22).subscribe((data) => 
     this.TVshow = data)
     
   }
