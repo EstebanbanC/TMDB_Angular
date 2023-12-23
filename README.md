@@ -594,91 +594,92 @@ Pour lancer le projet, il faut utiliser la commande `ng serve` et se rendre sur 
 
 ### Général
 
-Airing Today
-On The Air
-Popular
-Top Rated
-
+- Airing Today
+- On The Air
+- Popular
+- Top Rated
 
 ### Détails
 
-Details
-Account States
-Aggregate Credits
-Alternative Titles
-Changes
-Content Ratings
-Credits
-Episode Groups
-External IDs
-Images
-Keywords
-Latest
-Recommendations
-Reviews
-Screened Theatrically
-Similar
-Translations
-Videos
-Watch Providers
+- Details
+- Account States
+- Aggregate Credits
+- Alternative Titles
+- Changes
+- Content Ratings
+- Credits
+- Episode Groups
+- External IDs
+- Images
+- Keywords
+- Latest
+- Recommendations
+- Reviews
+- Screened Theatrically
+- Similar
+- Translations
+- Videos
+- Watch Providers
 
 ### Tv Saisons
 
-Details
-Account States
-Aggregate Credits
-Changes
-Credits
-External IDs
-Images
-Translations
-Videos
-Watch Providers
+- Details
+- Account States
+- Aggregate Credits
+- Changes
+- Credits
+- External IDs
+- Images
+- Translations
+- Videos
+- Watch Providers
 
 ### Tv Episodes
 
-Details
-Account States
-Changes
-Credits
-External IDs
-Images
-Translations
-Videos
+- Details
+- Account States
+- Changes
+- Credits
+- External IDs
+- Images
+- Translations
+- Videos
 
 ## People
 
 ### Général
-Popular
+
+- Popular
 
 ### Détails
-Details
-Changes
-Combined Credits
-External IDs
-Images
-Latest
-Movie Credits
-TV Credits
-Tagged Images
-Translations
+
+- Details
+- Changes
+- Combined Credits
+- External IDs
+- Images
+- Latest
+- Movie Credits
+- TV Credits
+- Tagged Images
+- Translations
 
 ## Search
 
-Collection
-Company
-Keyword
-Movie
-Multi
-Person
-TV
+- Collection
+- Company
+- Keyword
+- Movie
+- Multi
+- Person
+- TV
 
 ## Trending
 
-All
-Movies
-People
-TV
+- All
+- Movies
+- People
+- TV
 
 <details>
   <summary><a href="">Template .md</a></summary>
