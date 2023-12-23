@@ -59,12 +59,7 @@ export class ApiiComponent implements OnInit {
     this.Movie = data)
     
   }
-  
-  goMovieCredit(){
-    this.sub = this.dataService.getMovieCredit().subscribe((data) => 
-    this.Movie = data)
-    
-  }
+
 
   goMovieImages(){
     this.sub = this.dataService.getMovieImages().subscribe((data) => 

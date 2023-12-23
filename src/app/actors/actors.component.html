@@ -1,3 +1,6 @@
+<div *ngIf="!actors" class="min-h-screen flex justify-center align-item">
+    <span class="loading loading-spinner loading-lg"></span>
+</div>
 <div class="min-h-screen bg-base-200 z-20 p-11" *ngIf="actors">
     <div class="flex flex-wrap justify-center">
         <h1 class="text-5xl font-bold pt-6 mx-10">Acteurs</h1>
@@ -14,7 +17,7 @@
                     <p> {{ actor.known_for[0].title || actor.known_for[0].name }},
                         {{ actor.known_for[1].title || actor.known_for[1].name }}</p>
                     <div class="card-actions justify-center pt-3">
-                        <a class="btn btn-primary w-full text-lg">See More</a>
+                        <a [routerLink]="'/actor/' + actor.id" class="btn btn-primary w-full text-lg">See More</a>
                     </div>
                 </div>
             </div>

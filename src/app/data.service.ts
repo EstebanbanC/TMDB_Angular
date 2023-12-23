@@ -20,8 +20,8 @@ export class DataService {
   };
 
   id_test = 22;
-//  movies: Movie[] = [];
-  constructor(private httpClient: HttpClient) {}
+  //  movies: Movie[] = [];
+  constructor(private httpClient: HttpClient) { }
 
   getMoviesPopular(): Observable<Movie[]> {
     return this.httpClient
@@ -32,7 +32,7 @@ export class DataService {
       // function getMovie(e: any): Movie {}
       .pipe(
         map(
-          (e:any) => e.results
+          (e: any) => e.results
           // (e: any) =>
           //   e.results.map( (el: any): Movie => ({
           //     backdrop_path: el.backdrop_path,
@@ -64,7 +64,7 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
-  getMovieDetails(id:number): Observable<Movie[]> {
+  getMovieDetails(id: number): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + id + '?language=fr',
       this.httpOptions
@@ -78,11 +78,11 @@ export class DataService {
     );
   }
 
-  getMovieCredit(): Observable<Movie[]> {
+  getMovieCredit(id : number): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
-      this.site + 'movie/' + this.id_test + '/credits?language=fr',
+      this.site + 'movie/' + id + '/credits',
       this.httpOptions
-    );
+    ).pipe(map((e: any) => e.cast));;
   }
 
   getMovieImages(): Observable<Movie[]> {
@@ -94,9 +94,9 @@ export class DataService {
   getMovieRecommendations(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
       this.site +
-        'movie/' +
-        this.id_test +
-        '/recommendations?language=fr&page=1',
+      'movie/' +
+      this.id_test +
+      '/recommendations?language=fr&page=1',
       this.httpOptions
     );
   }
@@ -123,8 +123,8 @@ export class DataService {
 
   getMovieTopRated(): Observable<Movie[]> {
     return this.httpClient
-      .get<Movie[]>(this.site + 'movie/top_rated?language=fr&page=1', 
-      this.httpOptions)
+      .get<Movie[]>(this.site + 'movie/top_rated?language=fr&page=1',
+        this.httpOptions)
       .pipe(map((e: any) => e.results));
   }
 
@@ -156,33 +156,44 @@ export class DataService {
 
   getTvDetails(): Observable<TvShow[]> {
     return this.httpClient
-      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'?language=fr', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test + '?language=fr', this.httpOptions)
   }
 
   getTvAlternativeTitles(): Observable<TvShow[]> {
     return this.httpClient
-      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/alternative_titles', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test + '/alternative_titles', this.httpOptions)
   }
 
   getTvCredits(): Observable<TvShow[]> {
     return this.httpClient
-      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/credits?language=fr', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test + '/credits?language=fr', this.httpOptions)
   }
 
   getTvImages(): Observable<TvShow[]> {
     return this.httpClient
-      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/images', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test + '/images', this.httpOptions)
   }
 
   getTvRecommendations(): Observable<TvShow[]> {
     return this.httpClient
-      .get<TvShow[]>(this.site + 'tv/' + this.id_test +'/recommendations?language=fr&page=1', this.httpOptions)
+      .get<TvShow[]>(this.site + 'tv/' + this.id_test + '/recommendations?language=fr&page=1', this.httpOptions)
   }
 
   getActors(): Observable<Actor[]> {
     return this.httpClient
       .get<TvShow[]>(this.site + '/person/popular?language=fr&page=1', this.httpOptions)
       .pipe(map((e: any) => e.results));
+  }
+
+  getActorDetails(id: number): Observable<Actor> {
+    return this.httpClient
+      .get<Actor[]>(this.site + '/person/' + id + '?language=en-US' , this.httpOptions)
+        .pipe(map((e: any) => e));
+  }
+  getActorMovieCredits(id: number): Observable<[]> {
+    return this.httpClient
+    .get<[]>(this.site + '/person/' + id + '/movie_credits?language=en-US' , this.httpOptions)
+      .pipe(map((e: any) => e.cast));
   }
 
 }

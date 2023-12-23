@@ -1,3 +1,6 @@
+<div *ngIf="!movieList" class="min-h-screen flex justify-center align-item">
+    <span class="loading loading-spinner loading-lg"></span>
+</div>
 <div class="bg-base-200 z-20" *ngIf="movieList">
     <h1 class="text-5xl font-bold pt-6 mx-10">Movies</h1>
     <div class="w-auto border-2 border-base-300 mx-10"></div>

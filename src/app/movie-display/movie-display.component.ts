@@ -9,6 +9,7 @@ import { DataService } from '../data.service';
 })
 export class MovieDisplayComponent {
   movie: any = null;
+  actors :any = null;
   sub: any = null;
   id: any = null;
 
@@ -17,5 +18,9 @@ export class MovieDisplayComponent {
     this.sub = this.dataService
       .getMovieDetails(this.id)
       .subscribe((data) => (this.movie = data));
+
+    this.sub = this.dataService
+      .getMovieCredit(this.id)
+      .subscribe((data) => (this.actors = data));
   }
 }

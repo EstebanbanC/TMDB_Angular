@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { SoloMovieComponent } from './solo-movie/solo-movie.component';
 import { MovieDisplayComponent } from './movie-display/movie-display.component';
 import { ActorsComponent } from './actors/actors.component';
+import { ActorsDisplayComponent } from './actors-display/actors-display.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'solomovie', component: SoloMovieComponent },
   { path: 'movie/:id', component: MovieDisplayComponent },
-  { path: 'actors' , component: ActorsComponent}
+  { path: 'actors' , component: ActorsComponent},
+  { path: 'actor/:id', component: ActorsDisplayComponent }
 ];
 
 @NgModule({
