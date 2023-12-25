@@ -4,7 +4,8 @@
 <div class="bg-base-100 z-20 pt-11" *ngIf="movieList">
   <h1 class="text-5xl font-bold pt-8 pb-4 mx-10">Most popular movies</h1>
   <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
-      <div *ngFor="let movie of movieList" class="card w-96 bg-base-300 shadow-lg">
+      <div *ngFor="let movie of movieList" class="indicator card w-96 bg-base-300 shadow-lg">
+        <span *ngIf="movie.adult" class="indicator-item badge badge-secondary">Adult</span> 
           <figure>
               <img [src]="
           'https://www.themoviedb.org/t/p/w1920_and_h800_bestv2' +
@@ -19,7 +20,7 @@
               <h5 class="opacity-80 text-sm">{{ movie.release_date }}</h5>
               <p>{{ truncateDescription(movie.overview) }}</p>
               <div class="card-actions justify-center pt-3">
-                  <a class="btn btn-primary w-full text-lg" [routerLink]="'/movie/' + movie.id">See More</a>
+                  <a class="btn btn-primary w-full text-lg" [routerLink]="'/movie-details/' + movie.id">See More</a>
               </div>
           </div>
       </div>

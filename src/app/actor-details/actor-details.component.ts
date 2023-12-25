@@ -24,7 +24,7 @@ export class ActorDetailsComponent {
     this.sub = this.dataService
       .getActorMovieCredits(this.id)
       .subscribe((data) => (this.movies = data));
-
     
   }
+
 }

@@ -39,6 +39,6 @@
 </div>
 <div *ngIf="actors" class="carousel carousel-center max-w-full min-w-full p-4 space-x-4 bg-neutral">
     <div *ngFor="let actor of actors" class="carousel-item">
-      <img *ngIf="actor.profile_path" [routerLink]="'/actor/' + actor.id"
+      <img *ngIf="actor.profile_path" [routerLink]="'/actor-details/' + actor.id"
         [src]="'https://www.themoviedb.org/t/p/w470_and_h470_face/' + actor.profile_path" class=" w-56 rounded-box" />
     </div>

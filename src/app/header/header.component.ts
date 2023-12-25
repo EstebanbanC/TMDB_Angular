@@ -18,13 +18,17 @@ export class HeaderComponent {
   toggleDarkMode() {
     this.darkModeService.toggleDarkMode();
   }
-  constructor(private darkModeService: DarkModeService, private router: Router) {
+  constructor(private darkModeService: DarkModeService, public router: Router) {
     this.searchForm = new UntypedFormGroup({
       search: this.searchCtrl
     });
+
   }
 
   submit() {
+    console.log("Header submit" + this.searchCtrl.value);
     this.router.navigate(['/search/', this.searchCtrl.value]);
+    this.searchCtrl.setValue('');
+    
   }
 }

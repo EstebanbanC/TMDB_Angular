@@ -199,7 +199,7 @@ export class DataService {
 
   getSearch(query: string): Observable<[]> {
     return this.httpClient
-      .get<[]>(this.site + 'search/multi?query='+ query +'&include_adult=false&language=en-US&page=1' , this.httpOptions)
+      .get<[]>(this.site + 'search/multi?query='+ query +'&include_adult=true&language=en-US&page=1' , this.httpOptions)
       .pipe(map((e: any) => e.results));
   }
 

@@ -33,6 +33,7 @@ Pour lancer le projet, il faut utiliser la commande `ng serve` et se rendre sur 
 - Compléter le README
 - Amméliorer l'affichage des pages 'details' des films/séries (style, affichage des commentaires laissés par les gens avec ce [style](https://daisyui.com/components/chat/))
 - Vérifier les attendus du cahier des charges
+-  Vériier s'il n'y a pas de bug
 
 **_NOTE:_**  J'ai fait une liste de tout ce que pouvait faire l'API tout en bas de ce README
 

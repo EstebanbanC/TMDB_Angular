@@ -17,7 +17,7 @@
                     <p> {{ actor.known_for[0].title || actor.known_for[0].name }},
                         {{ actor.known_for[1].title || actor.known_for[1].name }}</p>
                     <div class="card-actions justify-center pt-3">
-                        <a [routerLink]="'/actor/' + actor.id" class="btn btn-primary w-full text-lg">See More</a>
+                        <a [routerLink]="'/actor-details/' + actor.id" class="btn btn-primary w-full text-lg">See More</a>
                     </div>
                 </div>
             </div>

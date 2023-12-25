@@ -1,5 +1,97 @@
-<pre *ngIf="response" class="pt-12">{{response | json}}</pre>
+<!-- <pre *ngIf="response" class="pt-12">{{response | json}}</pre>
 <div *ngIf="!response" class="min-h-screen flex justify-center align-item">
-    <span class="loading loading-spinner loading-lg"></span>
-</div>
+  <span class="loading loading-spinner loading-lg"></span>
+</div> -->
+<div class="bg-base-100 z-20 pt-5">
+  <div class="flex flex-col flex-wrap justify-center items-center">
+    <h1 class="text-5xl font-bold pt-16 pb-4">Search</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+      <label class="form-control w-full max-w-xs pt-2">
+        <div class="label">
+          <span class="label-text">What the name of the ... ?</span>
+          <!-- <span class="label-text-alt">Top Right label</span>   -->
+        </div>
+        <input type="text" formControlName="search" placeholder="movie / tv-show / actor"
+          class="input input-bordered w-full max-w-xs" />
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text">Adult content</span>
+            <input type="checkbox" class="checkbox" />
+          </label>
+        </div>
+      </label>
+    </form>
+  </div>
+  <!-- <pre>{{movies | json}}</pre> -->
+  <div *ngIf="movies.length > 0" class="bg-base-100 z-20 pt-11">
+    <h1 class="text-5xl font-bold mx-10">Movies</h1>
+    <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
+      <div *ngFor="let movie of movies" class="indicator card w-96 bg-base-300 shadow-lg">
+        <span *ngIf="movie.adult" class="indicator-item badge badge-secondary">Adult</span>
+        <figure>
+          <img [src]="
+          'https://www.themoviedb.org/t/p/w1920_and_h800_bestv2' +
+          movie.backdrop_path
+          " alt="Poster du film" />
+        </figure>
+        <div class="card-body flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="card-title">{{ movie.title }}</h2>
+            <app-star [note]="movie.vote_average" size="rating-sm"></app-star>
+          </div>
+          <h5 class="opacity-80 text-sm">{{ movie.release_date }}</h5>
+          <!-- <p>{{ truncateDescription(movie.overview) }}</p> -->
+          <div class="card-actions justify-center pt-3">
+            <a class="btn btn-primary w-full text-lg" [routerLink]="'/movie-details/' + movie.id">See More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div *ngIf="tv.length > 0" class="bg-base-100 z-20 pt-11">
+    <h1 class="text-5xl font-bold mx-10">Tv Shows</h1>
+    <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
+      <div *ngFor="let TvShow of tv" class="card w-96 bg-base-200 shadow-lg">
+        <figure><img [src]="'https://www.themoviedb.org/t/p/w1920_and_h800_bestv2'+TvShow.backdrop_path"
+            alt="Poster du film" /></figure>
+        <div class="card-body flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="card-title">{{TvShow.name}}</h2>
+            <app-star [note]="TvShow.vote_average" size="rating-sm"></app-star>
+
+          </div>
+          <h5 class="opacity-80 text-sm">{{TvShow.first_air_date}}</h5>
+          <p>{{truncateDescription(TvShow.overview)}}</p>
+          <div class="card-actions justify-center pt-3">
+            <button [routerLink]="'/tv-details/'+ TvShow.id" class="btn btn-primary w-full text-lg">See More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="actors.length > 0" class="bg-base-100 z-20 pt-11">
+    <h1 *ngIf="actors" class="text-5xl font-bold mx-10">Actors</h1>
+    <div *ngIf="actors" class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
+      <div *ngFor="let actor of actors" class="card w-96 bg-base-300 shadow-lg">
+        <figure>
+          <img [src]="
+      'https://www.themoviedb.org/t/p/w300_and_h450_bestv2' +
+      actor.profile_path
+    " alt="Shoes" class="w-full h-64 object-cover" />
+        </figure>
+        <div class="card-body flex flex-col">
+          <h5 class="opacity-80 text-sm">{{actor.name}}</h5>
+          <p> {{ actor.known_for[0].title || actor.known_for[0].name }},
+            {{ actor.known_for[1].title || actor.known_for[1].name }}</p>
+          <div class="card-actions justify-center pt-3">
+            <a [routerLink]="'/actor-details/' + actor.id" class="btn btn-primary w-full text-lg">See More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -21,18 +21,19 @@ const routes: Routes = [
 
   // Liens pour les acteurs
   { path: 'actors' , component: ActorsComponent},
-  { path: 'actor/:id', component: ActorDetailsComponent },
+  { path: 'actor-details/:id', component: ActorDetailsComponent },
   
   { path: 'search/:query', component: SearchComponent },
+  // { path: 'search', component: SearchComponent },
 
   // Liens pour les films
-  { path: 'movie/:id', component: MovieDetailsComponent },
+  { path: 'movie-details/:id', component: MovieDetailsComponent },
   { path: 'movie-top-100', component: MovieTop100Component },
   { path: 'movie-most-popular', component: MovieMostPopularComponent },
   { path: 'movie-upcoming', component: MovieUpcomingComponent },
 
   // Liens pour les séries
-  { path: 'show/:id', component: TVDetailsComponent },
+  { path: 'tv-details/:id', component: TVDetailsComponent },
   { path: 'tv-most-popular', component: TvMostPopularComponent },
   { path: 'tv-top-100', component: TVTop100Component }
 ];
