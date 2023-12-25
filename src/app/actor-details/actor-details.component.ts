@@ -3,24 +3,28 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-movie-display',
-  templateUrl: './movie-display.component.html',
-  styleUrls: ['./movie-display.component.scss'],
+  selector: 'app-actor-details',
+  templateUrl: './actor-details.component.html',
+  styleUrls: ['./actor-details.component.scss']
 })
-export class MovieDisplayComponent {
-  movie: any = null;
-  actors :any = null;
+export class ActorDetailsComponent {
+  actor: any = null;
+  movies: any = null;
+
   sub: any = null;
   id: any = null;
 
   constructor(private route: ActivatedRoute, private dataService: DataService) {
     this.route.params.subscribe((params) => (this.id = params['id']));
-    this.sub = this.dataService
-      .getMovieDetails(this.id)
-      .subscribe((data) => (this.movie = data));
 
     this.sub = this.dataService
-      .getMovieCredit(this.id)
-      .subscribe((data) => (this.actors = data));
+      .getActorDetails(this.id)
+      .subscribe((data) => (this.actor = data));
+
+    this.sub = this.dataService
+      .getActorMovieCredits(this.id)
+      .subscribe((data) => (this.movies = data));
+
+    
   }
 }

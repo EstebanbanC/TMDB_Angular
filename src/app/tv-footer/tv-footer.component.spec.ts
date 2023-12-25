@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SoloMovieComponent } from './solo-movie.component';
+import { TvFooterComponent } from './tv-footer.component';
 
-describe('SoloMovieComponent', () => {
-  let component: SoloMovieComponent;
-  let fixture: ComponentFixture<SoloMovieComponent>;
+describe('TvFooterComponent', () => {
+  let component: TvFooterComponent;
+  let fixture: ComponentFixture<TvFooterComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SoloMovieComponent]
+      declarations: [TvFooterComponent]
     });
-    fixture = TestBed.createComponent(SoloMovieComponent);
+    fixture = TestBed.createComponent(TvFooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

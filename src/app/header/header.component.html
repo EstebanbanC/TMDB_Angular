@@ -1,44 +1,12 @@
-<div class="navbar bg-base-300 fixed z-40 shadow-xl">
+<div class="navbar bg-base-300 z-40 shadow-xl fixed">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
       </div>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-      >
-        <li>
-          <a>Movies</a>
-          <ul class="p-2">
-            <li><a>Top 100</a></li>
-            <li><a>Most Populars</a></li>
-            <li><a>Upcoming</a></li>
-          </ul>
-        </li>
-        <li>
-          <a>TV Shows</a>
-          <ul class="p-2">
-            <li><a>Top 100</a></li>
-            <li><a>Most Populars</a></li>
-          </ul>
-        </li>
-        <li><a>Actors</a></li>
-        <li><a routerLink="/about">About us</a></li>
-      </ul>
+      
     </div>
     <a class="btn btn-ghost text-xl" routerLink="/home">TMDB Angular</a>
   </div>
@@ -48,9 +16,9 @@
         <details>
           <summary>Movies</summary>
           <ul class="p-2">
-            <li><a>Top 100</a></li>
-            <li><a>Most Populars</a></li>
-            <li><a>Upcoming</a></li>
+            <li><a routerLink="/movie-top-100">Top 100</a></li>
+            <li><a routerLink="/movie-most-popular">Most Populars</a></li>
+            <li><a routerLink="/movie-upcoming">Upcoming</a></li>
           </ul>
         </details>
       </li>
@@ -58,47 +26,28 @@
         <details>
           <summary>TV Shows</summary>
           <ul class="p-2">
-            <li><a>Top 100</a></li>
-            <li><a>Most Populars</a></li>
+            <li><a routerLink="/tv-top-100">Top 100</a></li>
+            <li><a routerLink="/tv-most-popular">Most Populars</a></li>
           </ul>
         </details>
       </li>
       <li><a routerLink="/actors">Actors</a></li>
+      <li><a routerLink="/search">Search</a></li>
       <li><a routerLink="/about">About us</a></li>
     </ul>
   </div>
-    <form (ngSubmit)="submit()" [formGroup]="searchForm" class="navbar-end">
-      <div class="form-control">
-        <input
-          type="text"
-          formControlName="search"
-          placeholder="Search"
-          class="input input-bordered w-24 md:w-auto"
-        />
-      </div>
-      <button type="submit" class="btn btn-ghost btn-sqare mr-3 ml-1">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
-        </svg>
-      </button>
+  <form (ngSubmit)="submit()" [formGroup]="searchForm" class="navbar-end">
+    <div class="form-control">
+      <input type="text" formControlName="search" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+    </div>
+    <button type="submit" class="btn btn-ghost btn-sqare mr-3 ml-1">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </button>
 
-    </form>
-      <input
-        type="checkbox"
-        [(ngModel)]="darkMode"
-        (change)="toggleDarkMode()"
-        value="dark"
-        class="toggle theme-controller bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2"
-      />
+  </form>
+  <input type="checkbox" [(ngModel)]="darkMode" (change)="toggleDarkMode()" value="dark"
+    class="toggle theme-controller bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2" />
 </div>

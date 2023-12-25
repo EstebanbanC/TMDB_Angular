@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-shows',
-  templateUrl: './shows.component.html',
-  styleUrls: ['./shows.component.scss']
+  selector: 'app-tv-most-popular',
+  templateUrl: './tv-most-popular.component.html',
+  styleUrls: ['./tv-most-popular.component.scss']
 })
-export class ShowsComponent implements OnInit{
+export class TvMostPopularComponent {
   TvShowList : any = ''
   sub : any = null
 

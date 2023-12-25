@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-movie-top-100',
-  templateUrl: './movie-top-100.component.html',
-  styleUrls: ['./movie-top-100.component.scss']
+  selector: 'app-movie-upcoming',
+  templateUrl: './movie-upcoming.component.html',
+  styleUrls: ['./movie-upcoming.component.scss']
 })
-export class MovieTop100Component {
+export class MovieUpcomingComponent {
   movieList: any = ''
   sub: any = null
 
@@ -19,7 +19,7 @@ export class MovieTop100Component {
   }
 
   getMoviePopular() {
-    this.sub = this.dataService.getMovieTopRated().subscribe((data) =>
+    this.sub = this.dataService.getMovieUpComing().subscribe((data) =>
       this.movieList = data)
 
 

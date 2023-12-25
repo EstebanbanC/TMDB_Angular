@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tv-details',
@@ -7,17 +8,20 @@ import { DataService } from '../data.service';
   styleUrls: ['./tv-details.component.scss']
 })
 export class TVDetailsComponent {
+  show: any = null;
+  actors :any = null;
 
-  TVshow : any = ''
-  sub : any = null
+  sub: any = null;
+  id: any = null;
 
-  constructor(private dataService : DataService){
+  constructor(private route: ActivatedRoute, private dataService: DataService) {
+    this.route.params.subscribe((params) => (this.id = params['id']));
+    this.sub = this.dataService
+      .getTvDetails(this.id)
+      .subscribe((data) => (this.show = data));
 
+    this.sub = this.dataService
+      .getTvCredits(this.id)
+      .subscribe((data) => (this.actors = data));
   }
-  ngOnInit() {
-    this.sub = this.dataService.getTvDetails(22).subscribe((data) => 
-    this.TVshow = data)
-    
-  }
-
 }

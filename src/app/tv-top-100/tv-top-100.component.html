@@ -1,14 +1,25 @@
-<p>tv-top-100 works!</p>
-
-<div *ngFor="let tv of TVTop100">
-
-    <p>{{tv.backdrop_path}}</p>
-    <p>{{tv.popularity}}</p>
-    <p>{{tv.title}}</p>
-    <p>{{tv.release_date}}</p>
-   <!-- Affiche la note moyenne du film -->
-   <p>{{tv.vote_average}}</p>
-    
-   <!-- Affiche le nombre de votes pour le film -->
-   <p>{{tv.vote_count}}</p>
-  </div>
+<div *ngIf="!TvShowList" class="min-h-screen flex justify-center align-item">
+    <span class="loading loading-spinner loading-lg"></span>
+</div>
+<div class="bg-base-100 z-0 pt-11">
+    <h1 class="text-5xl font-bold pt-8 pb-4 mx-10">Top 100 TV shows</h1>
+    <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
+        <div *ngFor="let TvShow of TvShowList" class="card w-96 bg-base-200 shadow-lg">
+            <figure><img [src]="'https://www.themoviedb.org/t/p/w1920_and_h800_bestv2'+TvShow.backdrop_path"
+                    alt="Poster du film" /></figure>
+            <div class="card-body flex flex-col">
+                <div class="flex items-center justify-between mb-2">
+                    <h2 class="card-title">{{TvShow.name}}</h2>
+                    <app-star [note]="TvShow.vote_average" size="rating-sm"></app-star>
+                
+                </div>
+                <h5 class="opacity-80 text-sm">{{TvShow.first_air_date}}</h5>
+                <p>{{truncateDescription(TvShow.overview)}}</p>
+                <div class="card-actions justify-center pt-3">
+                    <button [routerLink]="'/show/'+ TvShow.id" class="btn btn-primary w-full text-lg">See More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-tv-footer></app-tv-footer>
+</div>

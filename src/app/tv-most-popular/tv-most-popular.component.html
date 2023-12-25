@@ -1,9 +1,8 @@
 <div *ngIf="!TvShowList" class="min-h-screen flex justify-center align-item">
     <span class="loading loading-spinner loading-lg"></span>
 </div>
-<div class="bg-base-100 z-0">
-    <h1 class="text-5xl font-bold pt-6 mx-10">TV Shows</h1>
-    <div class="w-auto border-2 border-base-200 mx-10"></div>
+<div class="bg-base-100 z-0 pt-11">
+    <h1 class="text-5xl font-bold pt-8 pb-4 mx-10">Most popular TV shows</h1>
     <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
         <div *ngFor="let TvShow of TvShowList" class="card w-96 bg-base-200 shadow-lg">
             <figure><img [src]="'https://www.themoviedb.org/t/p/w1920_and_h800_bestv2'+TvShow.backdrop_path"
@@ -22,9 +21,5 @@
             </div>
         </div>
     </div>
-    <div class="mx-10 divider pb-3">More shows</div>
-    <div class="join mx-10 pb-6 flex flex-row">
-        <button class="btn btn-outline btn-neutral join-item basis-1/2">Top 100</button>
-        <button class="btn btn-outline btn-neutral join-item basis-1/2">Most Populars</button>
-    </div>
+    <app-tv-footer></app-tv-footer>
 </div>

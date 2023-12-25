@@ -7,17 +7,22 @@ import { DataService } from '../data.service';
   styleUrls: ['./tv-top-100.component.scss']
 })
 export class TVTop100Component {
-
-  TVTop100 : any = ''
+  TvShowList : any = ''
   sub : any = null
-JSON: any;
 
   constructor(private dataService : DataService){
 
   }
   ngOnInit() {
+    this.getTvShowPopular()
+  }
+
+  getTvShowPopular(){
     this.sub = this.dataService.getTvTopRated().subscribe((data) => 
-    this.TVTop100 = data)
+    this.TvShowList = data)
     
+  }
+  truncateDescription(description: string): string {
+    return description.length > 50 ? description.substring(0, 150) + '...' : description;
   }
 }
