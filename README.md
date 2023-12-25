@@ -27,6 +27,62 @@ Pour lancer le projet, il faut utiliser la commande `ng serve` et se rendre sur 
 - Affichage des films les mieux notés
   ...
 
+# A FINIR
+- ⌛ Formulaire de recherche (Baptiste en cours)
+- Tout écrire dans la même langue (front + back)
+- Compléter le README
+- Amméliorer l'affichage des pages 'details' des films/séries (style, affichage des commentaires laissés par les gens avec ce [style](https://daisyui.com/components/chat/))
+- Vérifier les attendus du cahier des charges
+
+**_NOTE:_**  J'ai fait une liste de tout ce que pouvait faire l'API tout en bas de ce README
+
+# Cahier des charges
+
+## Project description
+The project should be a Web application that fetches data from an API and when possible, update data too.
+
+- API can be: 
+  - Public API ✅
+  - Private API: your own API that is easily available ✅
+  - Local server exposing API (json-server for example) ✅
+- Web Application should use Angular features such as : 
+  - Components ✅
+  - Routing ✅
+  - Observables ✅
+  - Services ✅
+  - Interfaces ✅
+  - Don't forget an About page with yours name(s) ✅
+- Project should have a decent UI, you can use: 
+  - Own CSS ✅
+  - Third party CSS library (bootstrap, …) ✅
+  - Third party components (Angular Material, NgBootstrap, …) ✅
+
+## Delivery
+
+- Project should be delivered before 08 of january ❌
+- Packaging can be:
+  - Public github repository ✅
+  - Private github repository (please add me as viewer) ✅
+  - Compressed folder by email to frederic.chauchon@yncrea.fr ✅
+- Project must have a proper README that contains:
+  - Project description ❌
+  - How to use it ❌
+  - How to install it (mock server installation, authentication setup, …) ❌
+  - If using your own server (like json-server), please add dataset ❌
+  - Who have done the projet ❌
+
+⚠️ Project should be delivered without the node_modules directory ❌
+
+## Recommandations
+- If you’ve done Specifications, UI design or zonings documents, you can send them with the project too
+- Pay attention to:
+  - Variables names and types ❌
+  - Coding style: The code should be easily readable and consistent in the project ❌
+  - Comments: better to understand for everybody ❌
+- Please use linter to format your code ❌
+- Please don’t copy paste project found on internet ✅
+
+
 # Données disponibles
 
 ## Films
