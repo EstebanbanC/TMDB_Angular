@@ -2,10 +2,10 @@
   <input type="radio" class="rating-hidden cursor-default" />
   <input
     *ngFor="let item of [].constructor(10); let i = index"
-    [attr.checked]="(i + 1) / 2 == rating ? true : null"
-    [attr.disabled]="(i + 1) / 2 != rating ? true : null"
-    [class.mask-half-1]="i % 2 == 0"
-    [class.mask-half-2]="i % 2 != 0"
+    [attr.checked]="(i + 1) / 2 === rating ? true : null"
+    [attr.disabled]="(i + 1) / 2 !== rating ? true : null"
+    [class.mask-half-1]="i % 2 === 0"
+    [class.mask-half-2]="i % 2 !== 0"
     type="radio"
     class="bg-accent mask mask-star-2 cursor-default"
   />

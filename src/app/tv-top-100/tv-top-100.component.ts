@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './tv-top-100.component.html',
   styleUrls: ['./tv-top-100.component.scss']
 })
-export class TVTop100Component {
+export class TVTop100Component implements OnInit {
   TvShowList : any = ''
   sub : any = null
 

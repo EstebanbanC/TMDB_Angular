@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'actors' , component: ActorsComponent},
   { path: 'actor-details/:id', component: ActorDetailsComponent },
   
-  { path: 'search/:query', component: SearchComponent },
+  { path: 'search/:query/:adult', component: SearchComponent },
   // { path: 'search', component: SearchComponent },
 
   // Liens pour les films

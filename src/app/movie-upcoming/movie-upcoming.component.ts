@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './movie-upcoming.component.html',
   styleUrls: ['./movie-upcoming.component.scss']
 })
-export class MovieUpcomingComponent {
+export class MovieUpcomingComponent implements OnInit {
   movieList: any = ''
   sub: any = null
 

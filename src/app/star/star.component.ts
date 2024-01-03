@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-star',
@@ -7,8 +7,8 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 export class StarComponent implements OnInit {
   @Input() size !: string;
   @Input() note !: number;
-  rating: number = 0
-  name: string = ''
+  rating = 0
+  name = ''
   
   ngOnInit(): void {
     this.note = this.note/2;
@@ -18,7 +18,7 @@ export class StarComponent implements OnInit {
 
   round(value: number, step: number): number {
     step || (step = 1.0);
-    var inv = 1.0 / step;
+    const inv = 1.0 / step;
     return Math.round(value * inv) / inv;
   }
 }

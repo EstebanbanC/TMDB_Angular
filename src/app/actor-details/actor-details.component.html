@@ -7,7 +7,9 @@
             <img [src]="
           'https://www.themoviedb.org/t/p/w600_and_h900_bestv2' +
           actor.profile_path
-        " class="object-cover rounded-box" />
+        " class="object-cover rounded-box"
+        alt="Actor face"
+        />
         </div>
         <div class="w-2/3 p-8 mr-8">
             <div class="flex items-center">
@@ -28,6 +30,8 @@
     <div *ngFor="let movie of movies" class="carousel-item">
         <img *ngIf="movie.poster_path" [routerLink]="'/movie-details/' + movie.id"
             [src]="'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/' + movie.poster_path"
-            class=" w-56 rounded-box" />
+            class=" w-56 rounded-box" 
+            alt="Movie poster"
+            />
     </div>
 </div>

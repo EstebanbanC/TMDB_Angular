@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './tv-most-popular.component.html',
   styleUrls: ['./tv-most-popular.component.scss']
 })
-export class TvMostPopularComponent {
+export class TvMostPopularComponent implements OnInit {
   TvShowList : any = ''
   sub : any = null
 

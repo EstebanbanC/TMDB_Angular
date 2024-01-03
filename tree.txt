@@ -1,0 +1,47 @@
+.
+├── README.md
+├── angular.json
+├── package-lock.json
+├── package.json
+├── src
+│   ├── app
+│   │   ├── about/
+│   │   ├── actor-details/
+│   │   ├── actors/
+│   │   ├── footer/
+│   │   ├── header/
+│   │   ├── hero/
+│   │   ├── home/
+│   │   ├── movie-details/
+│   │   ├── movie-footer/
+│   │   ├── movie-most-popular/
+│   │   ├── movie-top-100/
+│   │   ├── movie-upcoming/
+│   │   ├── search/
+│   │   ├── star/
+│   │   ├── tv-details/
+│   │   ├── tv-footer/
+│   │   ├── tv-most-popular/
+│   │   ├── tv-top-100/
+│   │   ├── actor.ts
+│   │   ├── app-routing.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── dark-mode.service.spec.ts
+│   │   ├── dark-mode.service.ts
+│   │   ├── data.service.spec.ts
+│   │   ├── data.service.ts
+│   │   ├── movie.ts
+│   │   └── tv-show.ts
+│   ├── assets/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.scss
+├── tailwind.config.js
+├── tsconfig.app.json
+├── tsconfig.json
+└── tsconfig.spec.json
