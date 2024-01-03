@@ -1,23 +1,23 @@
 <div *ngIf="!actors" class="min-h-screen flex justify-center align-item">
-    <span class="loading loading-spinner loading-lg"></span>
+    <span class="loading loading-spinner loading-lg"></span> <!-- Affiche un spinner de chargement si la variable "actors" est vide -->
 </div>
 <div class="min-h-screen bg-base-100 z-20 p-11" *ngIf="actors">
     <div class="flex flex-wrap justify-center">
-        <h1 class="text-5xl font-bold pt-6 mx-10">Acteurs</h1>
+        <h1 class="text-5xl font-bold pt-6 mx-10">Acteurs</h1> <!-- Titre de la section -->
         <div class="flex flex-wrap justify-evenly gap-10 pt-3 pb-6">
             <div *ngFor="let actor of actors" class="card w-96 bg-base-300 shadow-lg">
                 <figure>
                     <img [src]="
                 'https://www.themoviedb.org/t/p/w470_and_h470_face/' +
                 actor.profile_path
-              " alt="Shoes" class="w-full h-64 object-cover" />
+              " alt="Shoes" class="w-full h-64 object-cover" /> <!-- Affiche l'image du profil de l'acteur -->
                 </figure>
                 <div class="card-body flex flex-col">
-                    <h5 class="opacity-80 text-sm">{{actor.name}}</h5>
+                    <h5 class="opacity-80 text-sm">{{actor.name}}</h5> <!-- Affiche le nom de l'acteur -->
                     <p> {{ actor.known_for[0].title || actor.known_for[0].name }},
-                        {{ actor.known_for[1].title || actor.known_for[1].name }}</p>
+                        {{ actor.known_for[1].title || actor.known_for[1].name }}</p> <!-- Affiche les titres ou noms des films/séries connus de l'acteur -->
                     <div class="card-actions justify-center pt-3">
-                        <a [routerLink]="'/actor-details/' + actor.id" class="btn btn-primary w-full text-lg">See More</a>
+                        <a [routerLink]="'/actor-details/' + actor.id" class="btn btn-primary w-full text-lg">Voir plus</a> <!-- Lien pour voir plus de détails sur l'acteur -->
                     </div>
                 </div>
             </div>

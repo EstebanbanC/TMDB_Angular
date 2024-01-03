@@ -9,11 +9,11 @@ import { DataService } from '../data.service';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
-  darkMode!: boolean;
-  backgroundImageUrl!: string;
+  darkMode!: boolean; // Mode sombre
+  backgroundImageUrl!: string; // URL de l'image de fond
 
-  sub : any = null;
-  lastRelease : any = null;
+  sub : any = null; // Abonnement
+  lastRelease : any = null; // Dernière sortie
 
   constructor(private darkModeService: DarkModeService, private dataService : DataService) {}
 

@@ -14,7 +14,7 @@
       alt="Poster"
     />
     <div class="m-3">
-      <h2 class="text-3xl font-bold">Last release :</h2>
+      <h2 class="text-3xl font-bold">Dernière sortie :</h2> // Commentaire ajouté
       <div class="flex items-center">
         <h1 class="text-5xl font-bold py-6">{{ lastRelease.title }}</h1>
         <app-star
@@ -25,7 +25,7 @@
       <h5 class="opacity-80 text-sm">{{ lastRelease.release_date }}</h5>
       <p class="py-6">{{ lastRelease.overview }}</p>
       <button [routerLink]="'/movie-details/' + lastRelease.id" class="btn btn-primary">
-        See more
+        Voir plus // Commentaire ajouté
       </button>
     </div>
   </div>

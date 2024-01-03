@@ -24,7 +24,8 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) {}
 
-  // USED FUNCTIONS
+  // FONCTIONS UTILISÉES
+  // Obtenir les films populaires
   getMoviesPopular(): Observable<Movie[]> {
     return this.httpClient
       .get<Movie[]>(
@@ -34,6 +35,7 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
+  // Obtenir les films en cours de diffusion
   getMovieNowPlaying(): Observable<Movie[]> {
     return this.httpClient
       .get<Movie[]>(
@@ -42,6 +44,8 @@ export class DataService {
       )
       .pipe(map((e: any) => e.results));
   }
+
+  // Obtenir les films à venir
   getMovieUpComing(): Observable<Movie[]> {
     return this.httpClient
       .get<Movie[]>(
@@ -51,6 +55,7 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
+  // Obtenir les détails d'un film
   getMovieDetails(id: number): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + id + '?language=' + this.langage + '',
@@ -58,12 +63,14 @@ export class DataService {
     );
   }
 
+  // Obtenir les crédits d'un film
   getMovieCredit(id: number): Observable<Movie[]> {
     return this.httpClient
       .get<Movie[]>(this.site + 'movie/' + id + '/credits', this.httpOptions)
       .pipe(map((e: any) => e.cast));
   }
 
+  // Obtenir les films les mieux notés
   getMovieTopRated(): Observable<Movie[]> {
     return this.httpClient
       .get<Movie[]>(
@@ -72,6 +79,8 @@ export class DataService {
       )
       .pipe(map((e: any) => e.results));
   }
+
+  // Obtenir les acteurs populaires
   getActors(): Observable<Actor[]> {
     return this.httpClient
       .get<TvShow[]>(
@@ -81,6 +90,7 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
+  // Obtenir les détails d'un acteur
   getActorDetails(id: number): Observable<Actor> {
     return this.httpClient
       .get<Actor[]>(
@@ -90,6 +100,7 @@ export class DataService {
       .pipe(map((e: any) => e));
   }
 
+  // Obtenir les crédits de films d'un acteur
   getActorMovieCredits(id: number): Observable<[]> {
     return this.httpClient
       .get<[]>(
@@ -99,6 +110,7 @@ export class DataService {
       .pipe(map((e: any) => e.cast));
   }
 
+  // Effectuer une recherche
   getSearch(query: string, adult_content: boolean): Observable<[]> {
     return this.httpClient
       .get<[]>(
@@ -115,6 +127,7 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
+  // Obtenir les séries TV populaires
   getTvPopular(): Observable<TvShow[]> {
     return this.httpClient
       .get<TvShow[]>(
@@ -129,6 +142,7 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
+  // Obtenir les séries TV les mieux notées
   getTvTopRated(): Observable<TvShow[]> {
     return this.httpClient
       .get<TvShow[]>(
@@ -143,6 +157,7 @@ export class DataService {
       .pipe(map((e: any) => e.results));
   }
 
+  // Obtenir les détails d'une série TV
   getTvDetails(id: number): Observable<[]> {
     return this.httpClient.get<[]>(
       this.site + 'tv/' + id + '?language=' + this.langage + '',
@@ -150,6 +165,7 @@ export class DataService {
     );
   }
 
+  // Obtenir les crédits d'une série TV
   getTvCredits(id: number): Observable<[]> {
     return this.httpClient
       .get<[]>(
@@ -158,7 +174,10 @@ export class DataService {
       )
       .pipe(map((e: any) => e.cast));
   }
-  // NOT USED FUNCTIONS
+
+  // FONCTIONS NON UTILISÉES
+  // Les fonctions suivantes sont commentées
+  /*
   getMovieAlternativeTitles(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
       this.site + 'movie/' + this.id_test + '/alternative_titles',
@@ -172,6 +191,7 @@ export class DataService {
       this.httpOptions
     );
   }
+
   getMovieRecommendations(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
       this.site +
@@ -190,6 +210,7 @@ export class DataService {
       this.httpOptions
     );
   }
+
   getMovieRewiews(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
       this.site +
@@ -250,10 +271,12 @@ export class DataService {
       this.httpOptions
     );
   }
+
   getTvAlternativeTitles(): Observable<TvShow[]> {
     return this.httpClient.get<TvShow[]>(
       this.site + 'tv/' + this.id_test + '/alternative_titles',
       this.httpOptions
     );
   }
+  */
 }
