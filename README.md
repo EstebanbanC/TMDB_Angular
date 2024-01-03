@@ -89,27 +89,3 @@ Pour lancer le projet, il faut utiliser la commande `ng serve` et se rendre sur 
 └── tsconfig.spec.json
 ``` 
 
-
-- Project should be delivered before 08 of january ❌
-- Packaging can be:
-  - Public github repository ✅
-  - Private github repository (please add me as viewer) ✅
-  - Compressed folder by email to frederic.chauchon@yncrea.fr ✅
-- Project must have a proper README that contains:
-  - Project description ✅
-  - How to use it ✅
-  - How to install it (mock server installation, authentication setup, …) ✅
-  - If using your own server (like json-server), please add dataset ✅
-  - Who have done the projet ✅
-
-⚠️ Project should be delivered without the node_modules directory ✅
-
-## Recommandations
-- If you’ve done Specifications, UI design or zonings documents, you can send them with the project too
-- Pay attention to:
-  - Variables names and types ❌
-  - Coding style: The code should be easily readable and consistent in the project ❌
-  - Comments: better to understand for everybody ❌
-- Please use linter to format your code ❌
-- Please don’t copy paste project found on internet ✅
-
