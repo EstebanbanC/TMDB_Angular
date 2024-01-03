@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  darkMode = false; // Initialize the property
+  darkMode = false;
 
   searchForm : UntypedFormGroup;
   searchCtrl = new FormControl<string>('', { nonNullable: true });
@@ -26,7 +26,6 @@ export class HeaderComponent {
   }
 
   submit() {
-    console.log("Header submit" + this.searchCtrl.value);
     this.router.navigate(['/search/', this.searchCtrl.value, false]);
     this.searchCtrl.setValue('');
     

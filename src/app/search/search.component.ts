@@ -38,9 +38,6 @@ export class SearchComponent implements OnDestroy, OnChanges {
       search: this.searchCtrl,
       adult_content: this.adultCtrl,
     });
-    console.log('constructor - adult : ' + this.adult);
-    console.log('constructor - adultCtrl : ' + this.adultCtrl.value);
-    console.log('constructor - searchCtrl : ' + this.searchCtrl.value);
     this.getData();
   }
 
@@ -52,10 +49,6 @@ export class SearchComponent implements OnDestroy, OnChanges {
 
   ngOnChanges() {
     this.getData();
-
-    console.log('ngOnChanges - adult : ' + this.adult);
-    console.log('ngOnChanges - adultCtrl : ' + this.adultCtrl.value);
-    console.log('ngOnChanges - searchCtrl : ' + this.searchCtrl.value);
   }
 
   onSubmit() {
@@ -64,9 +57,6 @@ export class SearchComponent implements OnDestroy, OnChanges {
       this.searchCtrl.value,
       this.adultCtrl.value,
     ]);
-    console.log('onSubmit - adult : ' + this.adult);
-    console.log('onSubmit - adultCtrl : ' + this.adultCtrl.value);
-    console.log('onSubmit - searchCtrl : ' + this.searchCtrl.value);
     this.getData();
   }
 
@@ -91,14 +81,10 @@ export class SearchComponent implements OnDestroy, OnChanges {
         this.tv = data.filter((item: any) => item.media_type === 'tv');
         this.actors = data.filter((item: any) => item.media_type === 'person');
       });
-      console.log('getData - adult : ' + this.adult);
-      console.log('getData - adultCtrl : ' + this.adultCtrl.value);
-      console.log('getData - searchCtrl : ' + this.searchCtrl.value);
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
-    console.log('ngOnDestroy');
   }
 
   truncateDescription(description: string): string {
